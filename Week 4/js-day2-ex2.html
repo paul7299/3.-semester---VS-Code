@@ -32,14 +32,18 @@
 
 <script>
 
+// Assigning the outer div and paragraph to js const
 const outer = document.getElementById("outer")
 const paragraph = document.getElementById("paragraph")
 
+// creating a function that changes the text of the paragraph
 function hiFromID() {
   paragraph.innerText = "Hi from " + event.target.id;
 }
 
 // Usikker på hvad der menes i opgave-"hintet". Dette giver mening for mig, og fungerer:
+
+// creating an eventListener on the outer div with the function I made
 outer.addEventListener("click", hiFromID);
 
 

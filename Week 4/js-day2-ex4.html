@@ -7,6 +7,54 @@
     <title>Document</title>
 </head>
 <body>
+
+    <!-- select opretter rulleliste -->
+    <label for="car-selector"><h4>Choose a car:</h4></label>
+    <select id="car-selector">
+        <option value="Saab">Saab</option>
+        <!-- More options will be populated by JavaScript -->
+    </select>
+
+    <h2>Selected Brand</h2>
+    <h4 id="car-make"></h4>
+        
+
+<script>
+
+    const cars = ["Ford", "WW", "Toyota", "Volvo"]; 
+    //Assume this was fetched from the backend
+
+    // Get reference to select element
+    const carSelector = document.getElementById("car-selector")
+    const selectedCar = document.getElementById("car-make")
+
+    // Loop through the 'cars' array and create an option element for each car make
+    for (const car of cars) {
+       
+        // Creates an DOM element we create as an option
+        const option = document.createElement("option");
+
+        // Set the 'value' attribute to the car make
+        option.value = car 
+        // Set the text displayed in the option to the car make
+        option.text = car 
+        // Append the option to the select element
+        carSelector.appendChild(option) 
+    }
+
+    // eventlistener to the select element
+    // that changes the text of the 'selectedCar' to the carSelector value
+    carSelector.addEventListener("change", function() {
+        selectedCar.innerText = carSelector.value
+    })
+
+   
+    
+
+
+</script>
+
+
     
 </body>
 </html>

@@ -8,5 +8,58 @@
 </head>
 <body>
     
+    <table class="table" id="thead">
+        <thead>
+        <tr>
+            <th>ID</th><th>Year</th><th>Make</th><th>Model</th><th>Price</th>
+        </tr>
+        </thead>
+        <tbody id="tbody"></tbody>
+    </table>
+
+    <div>
+        <span style="display: inline-block">
+            <input id="lessThanPrice" placeholder="Price">
+            <button id="btn-a1">Price less than</button>
+        </span>
+    </div>
+
+    
+
+    <script>
+
+    const cars = [
+    { id: 1, year: 1997, make: 'Ford', model: 'E350', price: 3000 },
+    { id: 2, year: 1999, make: 'Chevy', model: 'Venture', price: 4900 },
+    { id: 3, year: 2000, make: 'Chevy', model: 'Venture', price: 5000 },
+    { id: 4, year: 1996, make: 'Jeep', model: 'Grand Cherokee', price: 4799 },
+    { id: 5, year: 2005, make: 'Volvo', model: 'V70', price: 44799 }
+    ];
+
+    function mapCars() {
+        
+    }
+
+    //mapping cars to the cars table
+    const carsTable = cars.map(car => 
+    `<tr>
+        <th>${car.id}</th>
+        <th>${car.year}</th>
+        <th>${car.make}</th>
+        <th>${car.model}</th>
+        <th>${car.price}</th>
+        </tr>`)
+
+    document.getElementById("tbody").innerHTML = carsTable
+
+    // document.getElementById("filter-btn").onclick = (cars) => 
+
+    // TODO mangler filter og sort
+
+
+
+
+    </script>
+
 </body>
 </html>
