@@ -51,16 +51,23 @@
     document.getElementById("btn-a1").onclick = (evt) => {
         // 
         evt.preventDefault()
+        
         // Henter værdien fra tekst-input feltet (.value)
         const name = document.getElementById("name-input").value
+
         // Laver et nyt DOM-element og siger det skal være et list item element
         const listViewElement = document.createElement("li");
+
         //  "appender en child som indeholder selve navnet" til list itemet
         listViewElement.appendChild(document.createTextNode(name))
+
         // sætter en const lig med listen og appender child til denne
         const ul = document.getElementById("ul1").appendChild(listViewElement)
+
+        /pusher navnet til names
         names.push(name)
         console.log(names)
+
     }
     // Remove first
     document.getElementById("btn-a2").onclick = (evt) => {
