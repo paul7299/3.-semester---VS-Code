@@ -8,6 +8,8 @@
 </head>
 <body>
     
+<div style="padding:5%">
+
     <table class="table" id="thead">
         <thead>
         <tr>
@@ -21,8 +23,12 @@
         <span style="display: inline-block">
             <input id="lessThanPrice" placeholder="Price">
             <button id="btn-a1">Price less than</button>
+            <p>(price less than filter is not done)</p>
         </span>
     </div>
+
+</div>
+
 
     
 
@@ -48,7 +54,7 @@
         <th>${car.make}</th>
         <th>${car.model}</th>
         <th>${car.price}</th>
-        </tr>`)
+        </tr>`).join("") // join removes the commas
 
     document.getElementById("tbody").innerHTML = carsTable
 
