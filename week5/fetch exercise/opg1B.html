@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <button id="fetchDataButton">
+        Fetch Data
+    </button>
+
+    <table id="dataTable">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Phone</th>
+            </tr>
+        </thead>
+        <tbody id="dataTableBody"></tbody>
+    </table>
+
+<script>
+
+    // Vi tilføjer en eventlistener til knappen i html-en
+    document.getElementById("fetchDataButton").addEventListener("click", () => {
+
+        // vi henter data fra url'en vha en http-request
+        fetch("https://jsonplaceholder.typicode.com/users")
+
+        // Den første .then parser responsen til json-format
+            .then(response => response.json())
+
+        // Den andre .then tager JSON-data som blev hentet og udfører opgaver
+            .then(data => {
+                    
+                const table = data.map(person => 
+                `<tr>
+                    <td>${person.name}</td>
+                    <td>${person.phone}</td>
+                    </tr>`).join(""); 
+                    // join("") for at slå sammen til en string og dermed fjerne kommaer i mellem elementerne i arrayet
+                    document.getElementById("dataTableBody").innerHTML = table
+
+            })
+            .catch(error => {
+                console.error("Error fetching data:", error);
+            });
+    });
+
+</script>
+
+</body>
+</html>
