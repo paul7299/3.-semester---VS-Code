@@ -1,5 +1,5 @@
 
-const SERVER_URL = "http://localhost:8080/api/cars" // change for https://cars-app2023.azurewebsites.net/ and pull from azure db
+const SERVER_URL = "https://cars-app2023.azurewebsites.net/api/cars" // change for https://cars-app2023.azurewebsites.net/ and pull from azure db
 
 document.getElementById("btn-get-all").addEventListener("click", getAllCars)
 document.getElementById("btn-find-car").addEventListener("click", getACar)
